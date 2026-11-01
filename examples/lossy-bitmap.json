@@ -1,0 +1,126 @@
+[
+  {
+    "Plan": {
+      "Node Type": "Aggregate",
+      "Strategy": "Plain",
+      "Partial Mode": "Simple",
+      "Parallel Aware": false,
+      "Async Capable": false,
+      "Startup Cost": 21792.64,
+      "Total Cost": 21792.65,
+      "Plan Rows": 1,
+      "Plan Width": 8,
+      "Actual Startup Time": 129.505,
+      "Actual Total Time": 129.506,
+      "Actual Rows": 1,
+      "Actual Loops": 1,
+      "Shared Hit Blocks": 3,
+      "Shared Read Blocks": 11126,
+      "Shared Dirtied Blocks": 0,
+      "Shared Written Blocks": 55,
+      "Local Hit Blocks": 0,
+      "Local Read Blocks": 0,
+      "Local Dirtied Blocks": 0,
+      "Local Written Blocks": 0,
+      "Temp Read Blocks": 0,
+      "Temp Written Blocks": 0,
+      "Plans": [
+        {
+          "Node Type": "Bitmap Heap Scan",
+          "Parent Relationship": "Outer",
+          "Parallel Aware": false,
+          "Async Capable": false,
+          "Relation Name": "orders",
+          "Alias": "orders",
+          "Startup Cost": 2205.80,
+          "Total Cost": 21146.44,
+          "Plan Rows": 258480,
+          "Plan Width": 0,
+          "Actual Startup Time": 7.418,
+          "Actual Total Time": 120.460,
+          "Actual Rows": 257144,
+          "Actual Loops": 1,
+          "Recheck Cond": "(status = ANY ('{1,2,3}'::integer[]))",
+          "Rows Removed by Index Recheck": 323806,
+          "Filter": "(note IS NOT NULL)",
+          "Rows Removed by Filter": 0,
+          "Exact Heap Blocks": 607,
+          "Lossy Heap Blocks": 10303,
+          "Shared Hit Blocks": 3,
+          "Shared Read Blocks": 11126,
+          "Shared Dirtied Blocks": 0,
+          "Shared Written Blocks": 55,
+          "Local Hit Blocks": 0,
+          "Local Read Blocks": 0,
+          "Local Dirtied Blocks": 0,
+          "Local Written Blocks": 0,
+          "Temp Read Blocks": 0,
+          "Temp Written Blocks": 0,
+          "Plans": [
+            {
+              "Node Type": "Bitmap Index Scan",
+              "Parent Relationship": "Outer",
+              "Parallel Aware": false,
+              "Async Capable": false,
+              "Index Name": "orders_status_idx",
+              "Startup Cost": 0.00,
+              "Total Cost": 2141.18,
+              "Plan Rows": 258480,
+              "Plan Width": 0,
+              "Actual Startup Time": 4.189,
+              "Actual Total Time": 4.189,
+              "Actual Rows": 257144,
+              "Actual Loops": 1,
+              "Index Cond": "(status = ANY ('{1,2,3}'::integer[]))",
+              "Shared Hit Blocks": 0,
+              "Shared Read Blocks": 219,
+              "Shared Dirtied Blocks": 0,
+              "Shared Written Blocks": 0,
+              "Local Hit Blocks": 0,
+              "Local Read Blocks": 0,
+              "Local Dirtied Blocks": 0,
+              "Local Written Blocks": 0,
+              "Temp Read Blocks": 0,
+              "Temp Written Blocks": 0
+            }
+          ]
+        }
+      ]
+    },
+    "Planning": {
+      "Shared Hit Blocks": 121,
+      "Shared Read Blocks": 0,
+      "Shared Dirtied Blocks": 0,
+      "Shared Written Blocks": 0,
+      "Local Hit Blocks": 0,
+      "Local Read Blocks": 0,
+      "Local Dirtied Blocks": 0,
+      "Local Written Blocks": 0,
+      "Temp Read Blocks": 0,
+      "Temp Written Blocks": 0
+    },
+    "Planning Time": 0.290,
+    "Triggers": [
+    ],
+    "JIT": {
+      "Functions": 7,
+      "Options": {
+        "Inlining": false,
+        "Optimization": false,
+        "Expressions": true,
+        "Deforming": true
+      },
+      "Timing": {
+        "Generation": {
+          "Deform": 0.140,
+          "Total": 0.305
+        },
+        "Inlining": 0.000,
+        "Optimization": 0.193,
+        "Emission": 2.986,
+        "Total": 3.484
+      }
+    },
+    "Execution Time": 138.114
+  }
+]

@@ -1,0 +1,19 @@
+Aggregate  (cost=21792.64..21792.65 rows=1 width=8) (actual time=86.971..86.972 rows=1 loops=1)
+  Buffers: shared read=11129
+  ->  Bitmap Heap Scan on orders  (cost=2205.80..21146.44 rows=258480 width=0) (actual time=5.804..78.199 rows=257144 loops=1)
+        Recheck Cond: (status = ANY ('{1,2,3}'::integer[]))
+        Rows Removed by Index Recheck: 323806
+        Filter: (note IS NOT NULL)
+        Heap Blocks: exact=607 lossy=10303
+        Buffers: shared read=11129
+        ->  Bitmap Index Scan on orders_status_idx  (cost=0.00..2141.18 rows=258480 width=0) (actual time=3.137..3.138 rows=257144 loops=1)
+              Index Cond: (status = ANY ('{1,2,3}'::integer[]))
+              Buffers: shared read=219
+Planning:
+  Buffers: shared hit=86 read=35
+Planning Time: 0.695 ms
+JIT:
+  Functions: 7
+  Options: Inlining false, Optimization false, Expressions true, Deforming true
+  Timing: Generation 0.151 ms (Deform 0.068 ms), Inlining 0.000 ms, Optimization 0.139 ms, Emission 2.481 ms, Total 2.771 ms
+Execution Time: 95.611 ms

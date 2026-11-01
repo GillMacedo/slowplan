@@ -1,0 +1,16 @@
+Gather  (cost=1000.00..15037.20 rows=12 width=4) (actual time=1.989..17.088 rows=12 loops=1)
+  Workers Planned: 2
+  Workers Launched: 2
+  Buffers: shared hit=789 read=10122
+  ->  Parallel Seq Scan on orders  (cost=0.00..14036.00 rows=5 width=4) (actual time=2.748..9.647 rows=4 loops=3)
+        Filter: (customer_id = 123)
+        Rows Removed by Filter: 199996
+        Buffers: shared hit=789 read=10122
+Planning:
+  Buffers: shared hit=73
+Planning Time: 0.127 ms
+JIT:
+  Functions: 12
+  Options: Inlining false, Optimization false, Expressions true, Deforming true
+  Timing: Generation 0.319 ms (Deform 0.115 ms), Inlining 0.000 ms, Optimization 0.322 ms, Emission 4.855 ms, Total 5.496 ms
+Execution Time: 25.992 ms

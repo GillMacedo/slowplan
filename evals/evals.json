@@ -1,0 +1,30 @@
+[
+  {
+    "skills": ["reviewing-postgres-plans"],
+    "query": "This query is slow, here's the EXPLAIN ANALYZE output. What should I do?",
+    "files": ["examples/index-then-filter.txt"],
+    "expected_behavior": [
+      "Calls postgres_plan_review",
+      "Starts with where the time goes",
+      "Calls the index a candidate to test, and doesn't create it"
+    ]
+  },
+  {
+    "skills": ["reviewing-postgres-plans"],
+    "query": "My DELETE is slow. How do I see the plan?",
+    "expected_behavior": [
+      "Warns that EXPLAIN ANALYZE really runs the DELETE",
+      "Suggests a transaction that's rolled back"
+    ]
+  },
+  {
+    "skills": ["reviewing-postgres-plans"],
+    "query": "I added an index. Did it help?",
+    "files": ["examples/seq-scan-filter.json", "examples/seq-scan-fixed.json"],
+    "expected_behavior": [
+      "Calls postgres_plan_compare",
+      "Reports the timing change and what was fixed",
+      "Says that one run isn't a benchmark"
+    ]
+  }
+]

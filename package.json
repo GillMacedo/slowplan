@@ -1,0 +1,32 @@
+{
+  "name": "slowplan",
+  "version": "0.1.0",
+  "description": "Find why a PostgreSQL query is slow from its EXPLAIN output: where the time goes and what to try. MCP server and CLI that never connects to your database.",
+  "license": "MIT",
+  "author": "Giulliano Macedo (https://github.com/GillMacedo)",
+  "homepage": "https://github.com/GillMacedo/slowplan",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GillMacedo/slowplan.git"
+  },
+  "mcpName": "io.github.GillMacedo/slowplan",
+  "keywords": [
+    "mcp",
+    "mcp-server",
+    "claude",
+    "postgres",
+    "postgresql",
+    "explain",
+    "explain-analyze",
+    "query-plan",
+    "slow-query",
+    "database"
+  ],
+  "bin": {
+    "slowplan": "npm/bin.js"
+  },
+  "files": [
+    "npm/bin.js",
+    "npm/bin"
+  ]
+}

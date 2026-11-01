@@ -1,0 +1,27 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.GillMacedo/slowplan",
+  "description": "Find why a PostgreSQL query is slow from its EXPLAIN output, without a database connection.",
+  "version": "0.1.0",
+  "repository": {
+    "url": "https://github.com/GillMacedo/slowplan",
+    "source": "github"
+  },
+  "packages": [
+    {
+      "registryType": "npm",
+      "identifier": "slowplan",
+      "version": "0.1.0",
+      "transport": {
+        "type": "stdio"
+      },
+      "runtimeArguments": [],
+      "packageArguments": [
+        {
+          "type": "positional",
+          "value": "serve"
+        }
+      ]
+    }
+  ]
+}

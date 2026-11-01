@@ -1,0 +1,49 @@
+[
+  {
+    "Plan": {
+      "Node Type": "Index Scan",
+      "Parallel Aware": false,
+      "Async Capable": false,
+      "Scan Direction": "Forward",
+      "Index Name": "orders_customer_idx",
+      "Relation Name": "orders",
+      "Alias": "orders",
+      "Startup Cost": 0.42,
+      "Total Cost": 14.84,
+      "Plan Rows": 12,
+      "Plan Width": 4,
+      "Actual Startup Time": 0.026,
+      "Actual Total Time": 0.074,
+      "Actual Rows": 12,
+      "Actual Loops": 1,
+      "Index Cond": "(customer_id = 123)",
+      "Rows Removed by Index Recheck": 0,
+      "Shared Hit Blocks": 4,
+      "Shared Read Blocks": 11,
+      "Shared Dirtied Blocks": 0,
+      "Shared Written Blocks": 0,
+      "Local Hit Blocks": 0,
+      "Local Read Blocks": 0,
+      "Local Dirtied Blocks": 0,
+      "Local Written Blocks": 0,
+      "Temp Read Blocks": 0,
+      "Temp Written Blocks": 0
+    },
+    "Planning": {
+      "Shared Hit Blocks": 86,
+      "Shared Read Blocks": 4,
+      "Shared Dirtied Blocks": 0,
+      "Shared Written Blocks": 0,
+      "Local Hit Blocks": 0,
+      "Local Read Blocks": 0,
+      "Local Dirtied Blocks": 0,
+      "Local Written Blocks": 0,
+      "Temp Read Blocks": 0,
+      "Temp Written Blocks": 0
+    },
+    "Planning Time": 0.251,
+    "Triggers": [
+    ],
+    "Execution Time": 0.100
+  }
+]

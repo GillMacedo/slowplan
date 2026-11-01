@@ -1,0 +1,16 @@
+Gather Merge  (cost=53844.58..112181.99 rows=500000 width=109) (actual time=55.523..132.331 rows=600000 loops=1)
+  Workers Planned: 2
+  Workers Launched: 2
+  Buffers: shared hit=1303 read=9738, temp read=18076 written=18171
+  ->  Sort  (cost=52844.56..53469.56 rows=250000 width=109) (actual time=53.677..69.696 rows=200000 loops=3)
+        Sort Key: note, created_at DESC
+        Sort Method: external merge  Disk: 25432kB
+        Buffers: shared hit=1303 read=9738, temp read=18076 written=18171
+        Worker 0:  Sort Method: external merge  Disk: 24112kB
+        Worker 1:  Sort Method: external merge  Disk: 22792kB
+        ->  Parallel Seq Scan on orders  (cost=0.00..13411.00 rows=250000 width=109) (actual time=0.019..13.760 rows=200000 loops=3)
+              Buffers: shared hit=1173 read=9738
+Planning:
+  Buffers: shared hit=115
+Planning Time: 0.133 ms
+Execution Time: 150.665 ms

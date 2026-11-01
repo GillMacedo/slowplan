@@ -1,0 +1,97 @@
+[
+  {
+    "Plan": {
+      "Node Type": "Gather",
+      "Parallel Aware": false,
+      "Async Capable": false,
+      "Startup Cost": 1000.00,
+      "Total Cost": 15037.20,
+      "Plan Rows": 12,
+      "Plan Width": 4,
+      "Actual Startup Time": 2.220,
+      "Actual Total Time": 17.474,
+      "Actual Rows": 12,
+      "Actual Loops": 1,
+      "Workers Planned": 2,
+      "Workers Launched": 2,
+      "Single Copy": false,
+      "Shared Hit Blocks": 693,
+      "Shared Read Blocks": 10218,
+      "Shared Dirtied Blocks": 0,
+      "Shared Written Blocks": 0,
+      "Local Hit Blocks": 0,
+      "Local Read Blocks": 0,
+      "Local Dirtied Blocks": 0,
+      "Local Written Blocks": 0,
+      "Temp Read Blocks": 0,
+      "Temp Written Blocks": 0,
+      "Plans": [
+        {
+          "Node Type": "Seq Scan",
+          "Parent Relationship": "Outer",
+          "Parallel Aware": true,
+          "Async Capable": false,
+          "Relation Name": "orders",
+          "Alias": "orders",
+          "Startup Cost": 0.00,
+          "Total Cost": 14036.00,
+          "Plan Rows": 5,
+          "Plan Width": 4,
+          "Actual Startup Time": 3.054,
+          "Actual Total Time": 9.771,
+          "Actual Rows": 4,
+          "Actual Loops": 3,
+          "Filter": "(customer_id = 123)",
+          "Rows Removed by Filter": 199996,
+          "Shared Hit Blocks": 693,
+          "Shared Read Blocks": 10218,
+          "Shared Dirtied Blocks": 0,
+          "Shared Written Blocks": 0,
+          "Local Hit Blocks": 0,
+          "Local Read Blocks": 0,
+          "Local Dirtied Blocks": 0,
+          "Local Written Blocks": 0,
+          "Temp Read Blocks": 0,
+          "Temp Written Blocks": 0,
+          "Workers": [
+          ]
+        }
+      ]
+    },
+    "Planning": {
+      "Shared Hit Blocks": 66,
+      "Shared Read Blocks": 2,
+      "Shared Dirtied Blocks": 0,
+      "Shared Written Blocks": 0,
+      "Local Hit Blocks": 0,
+      "Local Read Blocks": 0,
+      "Local Dirtied Blocks": 0,
+      "Local Written Blocks": 0,
+      "Temp Read Blocks": 0,
+      "Temp Written Blocks": 0
+    },
+    "Planning Time": 0.154,
+    "Triggers": [
+    ],
+    "JIT": {
+      "Functions": 12,
+      "Options": {
+        "Inlining": false,
+        "Optimization": false,
+        "Expressions": true,
+        "Deforming": true
+      },
+      "Timing": {
+        "Generation": {
+          "Deform": 0.130,
+          "Total": 0.337
+        },
+        "Inlining": 0.000,
+        "Optimization": 0.317,
+        "Emission": 5.280,
+        "Total": 5.933
+      }
+    },
+    "Execution Time": 24.964
+  }
+]

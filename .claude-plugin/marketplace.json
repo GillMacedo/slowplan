@@ -1,0 +1,14 @@
+{
+  "name": "slowplan-marketplace",
+  "description": "Marketplace for slowplan, which finds why a PostgreSQL query is slow from its EXPLAIN output.",
+  "owner": {
+    "name": "Giulliano Macedo"
+  },
+  "plugins": [
+    {
+      "name": "slowplan",
+      "source": "./plugin",
+      "description": "Finds why a PostgreSQL query is slow from its EXPLAIN output, without connecting to your database."
+    }
+  ]
+}

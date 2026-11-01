@@ -1,0 +1,16 @@
+Aggregate  (cost=30453.00..30453.01 rows=1 width=8) (actual time=183.062..183.063 rows=1 loops=1)
+  Buffers: shared hit=1103 read=2848, temp read=2379 written=2379
+  ->  Hash Join  (cost=6556.00..28953.00 rows=600000 width=0) (actual time=26.942..162.701 rows=600000 loops=1)
+        Hash Cond: (o.customer_id = c.id)
+        Buffers: shared hit=1103 read=2848, temp read=2379 written=2379
+        ->  Seq Scan on orders o  (cost=0.00..8677.00 rows=600000 width=4) (actual time=0.028..31.925 rows=600000 loops=1)
+              Buffers: shared hit=559 read=2118
+        ->  Hash  (cost=3274.00..3274.00 rows=200000 width=4) (actual time=26.649..26.650 rows=200000 loops=1)
+              Buckets: 8192  Batches: 64  Memory Usage: 177kB
+              Buffers: shared hit=544 read=730, temp written=555
+              ->  Seq Scan on customers c  (cost=0.00..3274.00 rows=200000 width=4) (actual time=0.012..12.408 rows=200000 loops=1)
+                    Buffers: shared hit=544 read=730
+Planning:
+  Buffers: shared hit=107
+Planning Time: 0.234 ms
+Execution Time: 183.103 ms

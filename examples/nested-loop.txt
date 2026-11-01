@@ -1,0 +1,29 @@
+Finalize Aggregate  (cost=24178.00..24178.01 rows=1 width=8) (actual time=60.030..61.840 rows=1 loops=1)
+  Buffers: shared hit=257144 read=10984
+  ->  Gather  (cost=24177.79..24178.00 rows=2 width=8) (actual time=59.906..61.832 rows=3 loops=1)
+        Workers Planned: 2
+        Workers Launched: 2
+        Buffers: shared hit=257144 read=10984
+        ->  Partial Aggregate  (cost=23177.79..23177.80 rows=1 width=8) (actual time=54.216..54.217 rows=1 loops=3)
+              Buffers: shared hit=257144 read=10984
+              ->  Nested Loop  (cost=732.77..23090.88 rows=34763 width=0) (actual time=3.409..53.038 rows=28571 loops=3)
+                    Buffers: shared hit=257144 read=10984
+                    ->  Parallel Bitmap Heap Scan on orders o  (cost=732.48..12082.24 rows=35100 width=4) (actual time=1.099..18.660 rows=28571 loops=3)
+                          Recheck Cond: (status = 3)
+                          Heap Blocks: exact=3872
+                          Buffers: shared read=10984
+                          ->  Bitmap Index Scan on orders_status_idx  (cost=0.00..711.42 rows=84240 width=0) (actual time=2.188..2.188 rows=85714 loops=1)
+                                Index Cond: (status = 3)
+                                Buffers: shared read=75
+                    ->  Index Only Scan using customers_pkey on customers c  (cost=0.29..0.31 rows=1 width=4) (actual time=0.001..0.001 rows=1 loops=85714)
+                          Index Cond: (id = o.customer_id)
+                          Heap Fetches: 85714
+                          Buffers: shared hit=257144
+Planning:
+  Buffers: shared hit=137 read=37
+Planning Time: 0.390 ms
+JIT:
+  Functions: 23
+  Options: Inlining false, Optimization false, Expressions true, Deforming true
+  Timing: Generation 0.472 ms (Deform 0.081 ms), Inlining 0.000 ms, Optimization 0.357 ms, Emission 6.534 ms, Total 7.363 ms
+Execution Time: 69.906 ms

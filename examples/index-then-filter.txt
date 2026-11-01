@@ -1,0 +1,17 @@
+Bitmap Heap Scan on orders  (cost=711.62..12886.22 rows=783 width=4) (actual time=5.229..41.412 rows=857 loops=1)
+  Recheck Cond: (status = 3)
+  Filter: (bucket = 7)
+  Rows Removed by Filter: 84857
+  Heap Blocks: exact=10909
+  Buffers: shared read=10984
+  ->  Bitmap Index Scan on orders_status_idx  (cost=0.00..711.42 rows=84240 width=0) (actual time=1.885..1.886 rows=85714 loops=1)
+        Index Cond: (status = 3)
+        Buffers: shared read=75
+Planning:
+  Buffers: shared hit=57 read=26
+Planning Time: 0.279 ms
+JIT:
+  Functions: 6
+  Options: Inlining false, Optimization false, Expressions true, Deforming true
+  Timing: Generation 0.121 ms (Deform 0.059 ms), Inlining 0.000 ms, Optimization 0.135 ms, Emission 2.185 ms, Total 2.440 ms
+Execution Time: 48.910 ms

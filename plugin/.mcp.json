@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "slowplan": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "slowplan@0.1.0",
+        "serve"
+      ]
+    }
+  }
+}

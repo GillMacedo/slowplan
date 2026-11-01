@@ -1,0 +1,1 @@
+Prepare a release for version $ARGUMENTS: update the version in `main.go`, `package.json`, `server.json`, `plugin/.mcp.json` and `plugin/.claude-plugin/plugin.json`, move `[Unreleased]` entries in `CHANGELOG.md` under the new version with today's date, and run `make test` and `make lint`. Open a PR.
