@@ -21,4 +21,4 @@ MCP server and CLI that finds why a PostgreSQL query is slow from its EXPLAIN ou
 - Don't say a fix will help, or suggest running anything against production.
 
 ## Definition of done
-`make test` and `make lint` pass, and `CHANGELOG.md`, `ROADMAP.md` and docs are updated when relevant.
+`make test` and `make lint` pass, and `ROADMAP.md` and docs are updated when relevant.
